@@ -1,0 +1,40 @@
+{
+  "version": 1,
+  "maxAdditionalItems": 5,
+  "seededMaxResolvedItems": 4,
+  "vanillaCollectibleIdRange": {
+    "min": 1,
+    "max": 732
+  },
+  "supportedRaceFormats": [
+    "unseeded",
+    "seeded",
+    "custom"
+  ],
+  "rankedSoloSupported": false,
+  "taintedLazarusSupported": false,
+  "globallyBannedCollectibleIds": [
+    590,
+    721
+  ],
+  "questProgressionCollectibleIds": [
+    238,
+    239,
+    327,
+    328,
+    550,
+    551,
+    552,
+    626,
+    627,
+    633,
+    668
+  ],
+  "eligibility": {
+    "requireShown": true,
+    "excludeActiveItems": true,
+    "excludeOutsideVanillaRange": true
+  },
+  "seededEligibilitySource": "BUILDS",
+  "canonicalOrder": "ascending-id"
+}
