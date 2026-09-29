@@ -1,0 +1,44 @@
+name: C1 Additional Starting Items Verification
+
+on:
+  push:
+    branches:
+      - feature/additional-starting-items-v1
+  pull_request:
+    branches:
+      - main
+    paths:
+      - "package.json"
+      - "src/**"
+      - "test/**"
+      - ".github/workflows/c1-additional-starting-items.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Run C1 tests
+        run: npm test
+
+      - name: Check committed diff whitespace
+        run: git diff --check origin/main...HEAD
+
+      - name: Check working tree whitespace
+        run: git diff --check
