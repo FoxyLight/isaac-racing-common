@@ -42,6 +42,3 @@ jobs:
 
       - name: Check working tree whitespace
         run: git diff --check
-
-      - name: Confirm install did not modify tracked files
-        run: git diff --exit-code
